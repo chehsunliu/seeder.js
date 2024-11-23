@@ -11,12 +11,12 @@ class SeederManager {
     this.seeders = [];
   }
 
-  configure = (args: { seeders: Seeder[] }) => {
+  configure = (seeders: Seeder[]) => {
     while (this.seeders.length > 0) {
       this.seeders.pop();
     }
 
-    args.seeders.forEach((s) => this.seeders.push(s));
+    seeders.forEach((s) => this.seeders.push(s));
   };
 
   truncate = async () => {

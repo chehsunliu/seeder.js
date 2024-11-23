@@ -49,3 +49,15 @@ describe("native-json", () => {
     });
   });
 });
+
+describe("none", () => {
+  beforeEach(async () => {
+    await seederManager.truncate();
+    await seederManager.seed(path.join(__dirname, "data/20241124-none"));
+  });
+
+  it("does nothing when there is no data", async () => {
+    const { Items: items } = await client.send(new ScanCommand({ TableName: "posts" }));
+    expect(items?.length).toBe(0);
+  });
+});
