@@ -1,0 +1,13 @@
+{
+  "name": "@chehsunliu/seeder-js-mysql",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@chehsunliu/seeder-js": "0.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderSeparation": true,
+  "importOrder": ["^@chehsunliu/(.*)$", "^[./]"],
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "importOrderParserPlugins": ["typescript"]
+      }
+    }
+  ]
+}

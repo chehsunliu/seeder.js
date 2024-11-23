@@ -1,0 +1,13 @@
+[
+  {
+    "pk": {
+      "S": "post#0001"
+    },
+    "sk": {
+      "S": "content"
+    },
+    "content": {
+      "S": "This is the post #1"
+    }
+  }
+]

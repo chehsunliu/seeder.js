@@ -1,0 +1,15 @@
+{
+  "name": "@chehsunliu/seeder-js-dynamodb",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.699.0",
+    "@aws-sdk/lib-dynamodb": "^3.699.0",
+    "@chehsunliu/seeder-js": "0.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@chehsunliu/seeder-js-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/seeder-js",
+    "packages/seeder-js-dynamodb",
+    "packages/seeder-js-mysql"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "fmt": "prettier -w .",
+    "fmt-check": "prettier --check .",
+    "fmt-terraform": "terraform fmt -write -recursive ./db-schemas/dynamodb",
+    "fmt-terraform-check": "terraform fmt -check -recursive ./db-schemas/dynamodb",
+    "test": "vitest run --maxConcurrency=1"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.9.3",
+    "@vitest/coverage-v8": "^2.1.5",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.5"
+  }
+}
