@@ -1,0 +1,68 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check the format
+        run: |
+          npm run fmt-check
+          npm run fmt-terraform-check
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Start containers
+        run: docker compose up -d dynamodb mysql
+
+      - name: Provision DynamoDB
+        run: docker compose up --exit-code-from dynamodb-init dynamodb-init
+
+      - name: Provision MySQL
+        run: docker compose up --exit-code-from mysql-init mysql-init
+
+      - name: Run the tests
+        run: npm run test -- --reporter=verbose --silent --coverage
+
+      - name: Shutdown containers
+        if: always()
+        run: docker compose down --remove-orphans -v --timeout 3 || true

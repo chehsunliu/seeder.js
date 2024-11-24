@@ -10,6 +10,6 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.699.0",
     "@aws-sdk/lib-dynamodb": "^3.699.0",
-    "@chehsunliu/seeder-js": "0.0.0"
+    "@chehsunliu/seeder-js": "*"
   }
 }
