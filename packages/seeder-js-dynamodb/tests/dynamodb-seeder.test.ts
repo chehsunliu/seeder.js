@@ -39,7 +39,7 @@ describe("native-json", () => {
     await seederManager.seed(path.join(__dirname, "data/20241124-native-json"));
   });
 
-  it("loads native JSON data", async () => {
+  it("loads native json data", async () => {
     const { Items: items } = await client.send(new ScanCommand({ TableName: "posts" }));
     expect(items?.length).toBe(1);
     expect(items?.[0]).toStrictEqual({

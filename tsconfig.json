@@ -15,6 +15,9 @@
     },
     {
       "path": "./packages/seeder-js-mysql"
+    },
+    {
+      "path": "./packages/seeder-js-mysql/tests"
     }
   ]
 }

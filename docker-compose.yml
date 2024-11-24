@@ -21,3 +21,27 @@ services:
       TF_VAR_region: us-west-2
       TF_VAR_access_key_id: xxx
       TF_VAR_secret_access_key: xxx
+
+  mysql:
+    image: public.ecr.aws/docker/library/mysql:8.4
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: xxx
+    command: ["--general-log=1", "--general-log-file=/tmp/query.log"]
+
+  mysql-init:
+    image: flyway/flyway:11-alpine
+    depends_on:
+      - mysql
+    restart: on-failure
+    volumes:
+      - type: bind
+        source: ./db-schemas/mysql
+        target: /flyway/sql
+    command:
+      - "-url=jdbc:mysql://mysql:3306/blog?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
+      - "-user=root"
+      - "-password=xxx"
+      - "-connectRetries=60"
+      - "migrate"

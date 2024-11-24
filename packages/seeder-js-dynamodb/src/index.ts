@@ -124,9 +124,7 @@ export class DynamoDbSeeder implements Seeder {
       });
     }
 
-    return {
-      tables,
-    };
+    return { tables };
   };
 
   private truncateTable = async (info: TableInfo): Promise<void> => {
