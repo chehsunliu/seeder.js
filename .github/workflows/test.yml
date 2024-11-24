@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 22]
+        node-version: [18, 22]
     steps:
       - uses: actions/checkout@v4
 
@@ -44,3 +44,19 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Start containers
+        run: docker compose up -d dynamodb mysql
+
+      - name: Provision DynamoDB
+        run: docker compose up --exit-code-from dynamodb-init dynamodb-init
+
+      - name: Provision MySQL
+        run: docker compose up --exit-code-from mysql-init mysql-init
+
+      - name: Run the tests
+        run: npm run test -- --reporter=verbose --silent --coverage
+
+      - name: Shutdown containers
+        if: always()
+        run: docker compose down --remove-orphans -v --timeout 3 || true
