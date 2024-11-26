@@ -5,6 +5,19 @@
 
 Seeder.js is a Node.js library for data seeding, making data preparation for integration testing easier.
 
+<!-- TOC -->
+
+- [Seeder.js](#seederjs)
+  - [Supported Services](#supported-services)
+  - [Getting Started](#getting-started)
+  - [Custom Seeder](#custom-seeder)
+  <!-- TOC -->
+
+## Supported Services
+
+- [@chehsunliu/seeder-dynamodb](packages/seeder-dynamodb)
+- [@chehsunliu/seeder-mysql](packages/seeder-mysql)
+
 ## Getting Started
 
 Install Seeder.js:
@@ -66,7 +79,16 @@ test("blah blah blah", () => {
 });
 ```
 
-## Supported Services
+## Custom Seeder
 
-- [@chehsunliu/seeder-dynamodb](https://github.com/chehsunliu/seeder.js/tree/main/packages/seeder-dynamodb)
-- [@chehsunliu/seeder-mysql](https://github.com/chehsunliu/seeder.js/tree/main/packages/seeder-mysql)
+You can also create one if you want:
+
+```ts
+import { Seeder } from "@chehsunliu/seeder";
+
+class MySeeder implements Seeder {
+  truncate = async (): Promise<void> => {};
+  seed = async (folder: string): Promise<void> => {};
+  release = async (): Promise<void> => {};
+}
+```
