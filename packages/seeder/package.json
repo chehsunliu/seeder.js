@@ -1,6 +1,6 @@
 {
   "name": "@chehsunliu/seeder",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "description": "A Node.js library for data seeding, making data preparation for integration testing easier",
   "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
   "license": "MIT",
