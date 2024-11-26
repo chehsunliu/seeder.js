@@ -5,19 +5,19 @@
   },
   "references": [
     {
-      "path": "./packages/seeder-js"
+      "path": "./packages/seeder"
     },
     {
-      "path": "./packages/seeder-js-dynamodb"
+      "path": "./packages/seeder-dynamodb"
     },
     {
-      "path": "./packages/seeder-js-dynamodb/tests"
+      "path": "./packages/seeder-dynamodb/tests"
     },
     {
-      "path": "./packages/seeder-js-mysql"
+      "path": "./packages/seeder-mysql"
     },
     {
-      "path": "./packages/seeder-js-mysql/tests"
+      "path": "./packages/seeder-mysql/tests"
     }
   ]
 }

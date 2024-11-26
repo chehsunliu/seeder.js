@@ -1,7 +1,7 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder-js";
-import { DynamoDbSeeder } from "@chehsunliu/seeder-js-dynamodb";
+import seederManager from "@chehsunliu/seeder";
+import { DynamoDbSeeder } from "@chehsunliu/seeder-dynamodb";
 
 seederManager.configure([
   new DynamoDbSeeder({

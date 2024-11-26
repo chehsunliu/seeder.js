@@ -1,6 +1,6 @@
 import { defineWorkspace, UserProjectConfigExport } from "vitest/config";
 
-const packages = ["seeder-js-dynamodb", "seeder-js-mysql"];
+const packages = ["seeder-dynamodb", "seeder-mysql"];
 
 const configs: UserProjectConfigExport[] = packages.map((pkg) => ({
   extends: "./vitest.config.mts",

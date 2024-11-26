@@ -15,7 +15,7 @@ import assert from "node:assert";
 import * as fs from "node:fs";
 import path from "node:path";
 
-import type { Seeder } from "@chehsunliu/seeder-js";
+import type { Seeder } from "@chehsunliu/seeder";
 
 const maxWindowSize = 25;
 
