@@ -1,22 +1,8 @@
-# Seeder.js
+# Seeder.js / MySQL
 
-[![Test](https://github.com/chehsunliu/seeder.js/actions/workflows/test.yml/badge.svg)](https://github.com/chehsunliu/seeder.js/actions/workflows/test.yml)
-![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder?style=flat-square)
+![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-mysql?style=flat-square)
 
-Seeder.js is a Node.js library for data seeding, making data preparation for integration testing easier.
-
-<!-- TOC -->
-
-- [Seeder.js](#seederjs)
-  - [Supported Services](#supported-services)
-  - [Getting Started](#getting-started)
-  - [Custom Seeder](#custom-seeder)
-  <!-- TOC -->
-
-## Supported Services
-
-- [@chehsunliu/seeder-dynamodb](packages/seeder-dynamodb)
-- [@chehsunliu/seeder-mysql](packages/seeder-mysql)
+The MySQL implementation for Seeder.js.
 
 ## Getting Started
 
@@ -24,6 +10,35 @@ Install Seeder.js:
 
 ```sh
 npm install -D @chehsunliu/seeder @chehsunliu/seeder-mysql
+```
+
+Assume the database schemas in the local MySQL server have been managed by Flyway:
+
+```yaml
+services:
+  mysql:
+    image: mysql:8.4
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: xxx
+    command: ["--general-log=1", "--general-log-file=/tmp/query.log"]
+
+  mysql-init:
+    image: flyway/flyway:11-alpine
+    depends_on:
+      - mysql
+    restart: on-failure
+    volumes:
+      - type: bind
+        source: ./db-schemas/mysql
+        target: /flyway/sql
+    command:
+      - "-url=jdbc:mysql://mysql:3306/demo?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
+      - "-user=root"
+      - "-password=xxx"
+      - "-connectRetries=60"
+      - "migrate"
 ```
 
 Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesAfterEnv` or in Vitest `setupFiles`:
@@ -77,18 +92,4 @@ beforeEach(async () => {
 test("blah blah blah", () => {
   // Data should be available here.
 });
-```
-
-## Custom Seeder
-
-You can also create one if you want:
-
-```ts
-import { Seeder } from "@chehsunliu/seeder";
-
-class MySeeder implements Seeder {
-  truncate = async (): Promise<void> => {};
-  seed = async (folder: string): Promise<void> => {};
-  release = async (): Promise<void> => {};
-}
 ```
