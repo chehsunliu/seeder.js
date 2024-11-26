@@ -1,6 +1,6 @@
 {
   "name": "@chehsunliu/seeder-dynamodb",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "description": "The DynamoDB implementation for Seeder.js",
   "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
   "license": "MIT",
