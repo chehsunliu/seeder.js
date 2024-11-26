@@ -1,6 +1,21 @@
 {
   "name": "@chehsunliu/seeder",
   "version": "0.1.0",
+  "description": "A Node.js library for data seeding, making data preparation for integration testing easier",
+  "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chehsunliu/seeder.js.git",
+    "directory": "packages/seeder"
+  },
+  "bugs": {
+    "url": "https://github.com/chehsunliu/seeder.js/issues"
+  },
+  "keywords": [
+    "seeder",
+    "test"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
