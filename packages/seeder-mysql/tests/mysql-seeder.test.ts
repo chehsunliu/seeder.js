@@ -3,7 +3,7 @@ import { createPool } from "mysql2";
 import path from "node:path";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import seederManager from "@chehsunliu/seeder-js";
+import seederManager from "@chehsunliu/seeder";
 
 import { Database } from "./lib/types";
 

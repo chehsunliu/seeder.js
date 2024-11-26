@@ -1,11 +1,11 @@
 {
-  "name": "@chehsunliu/seeder-js-monorepo",
+  "name": "@chehsunliu/seeder-monorepo",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "workspaces": [
-    "packages/seeder-js",
-    "packages/seeder-js-dynamodb",
-    "packages/seeder-js-mysql"
+    "packages/seeder",
+    "packages/seeder-dynamodb",
+    "packages/seeder-mysql"
   ],
   "scripts": {
     "build": "tsc --build",

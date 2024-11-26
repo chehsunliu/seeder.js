@@ -1,7 +1,7 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder-js";
-import { MySqlSeeder } from "@chehsunliu/seeder-js-mysql";
+import seederManager from "@chehsunliu/seeder";
+import { MySqlSeeder } from "@chehsunliu/seeder-mysql";
 
 seederManager.configure([
   new MySqlSeeder({

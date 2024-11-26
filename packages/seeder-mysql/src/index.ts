@@ -3,7 +3,7 @@ import schemaInspector from "knex-schema-inspector";
 import fs from "node:fs";
 import path from "node:path";
 
-import { Seeder } from "@chehsunliu/seeder-js";
+import { Seeder } from "@chehsunliu/seeder";
 
 export type DataSelector = {
   type: "sql" | "json";
