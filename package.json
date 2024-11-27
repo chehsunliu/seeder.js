@@ -19,7 +19,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.0",
     "@types/ssh2-sftp-client": "^9.0.4",
     "@vitest/coverage-v8": "^2.1.6",
     "kysely": "^0.27.4",
