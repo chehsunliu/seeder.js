@@ -1,7 +1,7 @@
 {
   "name": "@chehsunliu/seeder-monorepo",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A Node.js library for data seeding, making data preparation for integration testing easier",
   "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
   "license": "MIT",
