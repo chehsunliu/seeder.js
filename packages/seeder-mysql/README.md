@@ -1,6 +1,6 @@
 # Seeder.js / MySQL
 
-![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-mysql?style=flat-square)
+[![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-mysql?style=flat-square)](https://www.npmjs.com/package/@chehsunliu/seeder-mysql)
 
 The MySQL implementation for Seeder.js.
 

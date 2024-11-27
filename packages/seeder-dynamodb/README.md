@@ -1,6 +1,6 @@
 # Seeder.js / DynamoDB
 
-![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-dynamodb?style=flat-square)
+[![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-dynamodb?style=flat-square)](https://www.npmjs.com/package/@chehsunliu/seeder-dynamodb)
 
 The DynamoDB implementation for Seeder.js.
 
