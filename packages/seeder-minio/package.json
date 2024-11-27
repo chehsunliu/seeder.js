@@ -1,0 +1,30 @@
+{
+  "name": "@chehsunliu/seeder-minio",
+  "version": "0.0.0",
+  "description": "The MinIO implementation for Seeder.js",
+  "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chehsunliu/seeder.js.git",
+    "directory": "packages/seeder-minio"
+  },
+  "bugs": {
+    "url": "https://github.com/chehsunliu/seeder.js/issues"
+  },
+  "keywords": [
+    "seeder",
+    "test",
+    "minio"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.701.0",
+    "@chehsunliu/seeder": "*"
+  }
+}

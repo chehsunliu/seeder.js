@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Start containers
-        run: docker compose up -d dynamodb mysql ftp sftp
+        run: docker compose up -d dynamodb ftp minio mysql sftp
 
       - name: Provision DynamoDB
         run: docker compose up --exit-code-from dynamodb-init dynamodb-init
