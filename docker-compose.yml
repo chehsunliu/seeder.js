@@ -42,7 +42,7 @@ services:
         source: ./db-schemas/mysql
         target: /flyway/sql
     command:
-      - "-url=jdbc:mysql://mysql:3306/blog?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
+      - "-url=jdbc:mysql://mysql:3306/demo?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
       - "-user=root"
       - "-password=xxx"
       - "-connectRetries=60"

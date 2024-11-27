@@ -10,7 +10,7 @@ seederManager.configure([
       port: 3306,
       user: "root",
       password: "xxx",
-      database: "blog",
+      database: "demo",
     },
     dataSelectors: [
       { type: "sql", getFilename: (tableName: string) => `${tableName}.sql` },
