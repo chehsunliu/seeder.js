@@ -1,0 +1,30 @@
+{
+  "name": "@chehsunliu/seeder-ftp",
+  "version": "0.0.0",
+  "description": "The FTP implementation for Seeder.js",
+  "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chehsunliu/seeder.js.git",
+    "directory": "packages/seeder-ftp"
+  },
+  "bugs": {
+    "url": "https://github.com/chehsunliu/seeder.js/issues"
+  },
+  "keywords": [
+    "seeder",
+    "test",
+    "ftp"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@chehsunliu/seeder": "*",
+    "basic-ftp": "^5.0.5"
+  }
+}

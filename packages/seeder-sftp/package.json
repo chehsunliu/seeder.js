@@ -1,0 +1,30 @@
+{
+  "name": "@chehsunliu/seeder-sftp",
+  "version": "0.0.0",
+  "description": "The SFTP implementation for Seeder.js",
+  "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chehsunliu/seeder.js.git",
+    "directory": "packages/seeder-sftp"
+  },
+  "bugs": {
+    "url": "https://github.com/chehsunliu/seeder.js/issues"
+  },
+  "keywords": [
+    "seeder",
+    "test",
+    "sftp"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@chehsunliu/seeder": "*",
+    "ssh2-sftp-client": "^11.0.0"
+  }
+}

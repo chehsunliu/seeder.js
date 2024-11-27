@@ -16,7 +16,9 @@ Seeder.js is a Node.js library for data seeding, making data preparation for int
 ## Supported Services
 
 - [@chehsunliu/seeder-dynamodb](packages/seeder-dynamodb)
+- [@chehsunliu/seeder-ftp](packages/seeder-ftp)
 - [@chehsunliu/seeder-mysql](packages/seeder-mysql)
+- [@chehsunliu/seeder-sftp](packages/seeder-sftp)
 
 ## Getting Started
 
