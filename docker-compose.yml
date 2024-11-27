@@ -65,3 +65,12 @@ services:
       - "127.0.0.1:2222:22"
     command:
       - "foo:bar:1000:1000:upload"
+
+  minio:
+    image: minio/minio
+    restart: always
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    entrypoint: sh
+    command: -c 'mkdir -p /data/demo && /usr/bin/minio server /data --console-address :9001'

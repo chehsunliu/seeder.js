@@ -20,6 +20,12 @@
       "path": "./packages/seeder-ftp/tests"
     },
     {
+      "path": "./packages/seeder-minio"
+    },
+    {
+      "path": "./packages/seeder-minio/tests"
+    },
+    {
       "path": "./packages/seeder-mysql"
     },
     {
