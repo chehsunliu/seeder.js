@@ -14,10 +14,22 @@
       "path": "./packages/seeder-dynamodb/tests"
     },
     {
+      "path": "./packages/seeder-ftp"
+    },
+    {
+      "path": "./packages/seeder-ftp/tests"
+    },
+    {
       "path": "./packages/seeder-mysql"
     },
     {
       "path": "./packages/seeder-mysql/tests"
+    },
+    {
+      "path": "./packages/seeder-sftp"
+    },
+    {
+      "path": "./packages/seeder-sftp/tests"
     }
   ]
 }

@@ -1,6 +1,10 @@
+import * as fs from "node:fs";
+import * as path from "node:path";
 import { defineWorkspace, UserProjectConfigExport } from "vitest/config";
 
-const packages = ["seeder-dynamodb", "seeder-mysql"];
+const packages = fs
+  .readdirSync("./packages")
+  .filter((f) => fs.existsSync(path.join("./packages", f, "tests/setup.ts")));
 
 const configs: UserProjectConfigExport[] = packages.map((pkg) => ({
   extends: "./vitest.config.mts",

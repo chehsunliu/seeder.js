@@ -14,7 +14,7 @@ const db = new Kysely<Database>({
       port: 3306,
       user: "root",
       password: "xxx",
-      database: "blog",
+      database: "demo",
     }),
   }),
 });
