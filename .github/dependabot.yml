@@ -4,3 +4,12 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    groups:
+      vite:
+        patterns:
+          - "@vitest/*"
+          - "vitest"
+      dev-dependencies:
+        dependency-type: development
+        exclude-patterns:
+          - "@types/ssh2-sftp-client"
