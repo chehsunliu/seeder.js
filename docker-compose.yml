@@ -63,8 +63,13 @@ services:
     restart: always
     ports:
       - "127.0.0.1:2222:22"
+    entrypoint: "/bin/bash"
+    # Disable chroot to avoid 100% CPU in Fedora:
+    # - https://unix.stackexchange.com/q/729987/144328
+    # - https://scvalex.net/posts/56/
     command:
-      - "foo:bar:1000:1000:upload"
+      - "-c"
+      - "sed -i '/ChrootDirectory/d' /etc/ssh/sshd_config && /entrypoint foo:bar:1000:1000:upload"
 
   minio:
     image: minio/minio

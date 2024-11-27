@@ -12,7 +12,7 @@ seederManager.configure([
       password: "bar",
     },
     localSrcDir: "sftp",
-    sftpDestDir: "/upload",
+    sftpDestDir: "upload",
   }),
 ]);
 

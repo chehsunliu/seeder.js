@@ -26,8 +26,8 @@ describe("basics", () => {
   });
 
   it("loads data", async () => {
-    expect((await client.get("/upload/a.txt")).toString().trimEnd()).toBe("321");
-    expect((await client.get("/upload/b/c.txt")).toString().trimEnd()).toBe("cba");
+    expect((await client.get("./upload/a.txt")).toString().trimEnd()).toBe("321");
+    expect((await client.get("./upload/b/c.txt")).toString().trimEnd()).toBe("cba");
   });
 });
 
