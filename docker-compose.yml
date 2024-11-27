@@ -1,6 +1,7 @@
 services:
   dynamodb:
     image: amazon/dynamodb-local:latest
+    restart: always
     ports:
       - "127.0.0.1:8000:8000"
 
@@ -24,6 +25,7 @@ services:
 
   mysql:
     image: mysql:8.4
+    restart: always
     ports:
       - "127.0.0.1:3306:3306"
     environment:
@@ -45,3 +47,21 @@ services:
       - "-password=xxx"
       - "-connectRetries=60"
       - "migrate"
+
+  ftp:
+    image: delfer/alpine-ftp-server
+    restart: always
+    ports:
+      - "127.0.0.1:2121:21"
+      - "127.0.0.1:21000-21010:21000-21010"
+    environment:
+      ADDRESS: "localhost"
+      USERS: "foo|BC499D13-EB4B-4EAE-994D-7435364654C5"
+
+  sftp:
+    image: atmoz/sftp:alpine
+    restart: always
+    ports:
+      - "127.0.0.1:2222:22"
+    command:
+      - "foo:bar:1000:1000:upload"
