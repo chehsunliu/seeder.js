@@ -16,26 +16,28 @@ Assume the database schemas in the local Postgres server have been managed by Fl
 
 ```yaml
 services:
-  mysql:
-    image: mysql:8.4
+  postgres:
+    image: postgres:17-alpine
+    restart: always
     ports:
-      - "127.0.0.1:3306:3306"
+      - "127.0.0.1:5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: xxx
-    command: ["--general-log=1", "--general-log-file=/tmp/query.log"]
+      POSTGRES_PASSWORD: xxx
+      POSTGRES_DB: demo
+    command: ["-c", "log_statement=all"]
 
-  mysql-init:
+  postgres-init:
     image: flyway/flyway:11-alpine
     depends_on:
-      - mysql
+      - postgres
     restart: on-failure
     volumes:
       - type: bind
-        source: ./db-schemas/mysql
+        source: ./db-schemas/postgres
         target: /flyway/sql
     command:
-      - "-url=jdbc:mysql://mysql:3306/demo?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
-      - "-user=root"
+      - "-url=jdbc:postgresql://postgres:5432/demo"
+      - "-user=postgres"
       - "-password=xxx"
       - "-connectRetries=60"
       - "migrate"
@@ -45,19 +47,18 @@ Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesA
 
 ```ts
 import seederManager from "@chehsunliu/seeder";
-import { MySqlSeeder } from "@chehsunliu/seeder-mysql";
+import { PostgresSeeder } from "@chehsunliu/seeder-postgres";
 
 seederManager.configure([
-  new MySqlSeeder({
+  new PostgresSeeder({
     connection: {
       host: "127.0.0.1",
-      port: 3306,
-      user: "root",
+      port: 5432,
+      user: "postgres",
       password: "xxx",
       database: "demo",
     },
     dataSelectors: [
-      // The order matters. A table will only pick the first matched selector.
       { type: "sql", getFilename: (tableName: string) => `${tableName}.sql` },
       { type: "json", getFilename: (tableName: string) => `${tableName}.json` },
     ],
