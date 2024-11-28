@@ -105,3 +105,9 @@ services:
       - "127.0.0.1:9001:9001"
     entrypoint: sh
     command: -c 'mkdir -p /data/demo && /usr/bin/minio server /data --console-address :9001'
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    ports:
+      - "127.0.0.1:6379:6379"

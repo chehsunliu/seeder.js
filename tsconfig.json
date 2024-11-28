@@ -38,6 +38,12 @@
       "path": "./packages/seeder-postgres/tests"
     },
     {
+      "path": "./packages/seeder-redis"
+    },
+    {
+      "path": "./packages/seeder-redis/tests"
+    },
+    {
       "path": "./packages/seeder-sftp"
     },
     {
