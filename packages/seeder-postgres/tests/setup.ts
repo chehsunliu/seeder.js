@@ -1,10 +1,10 @@
 import { afterAll } from "vitest";
 
 import seederManager from "@chehsunliu/seeder";
-import { PostgreSqlSeeder } from "@chehsunliu/seeder-postgresql";
+import { PostgresSeeder } from "@chehsunliu/seeder-postgres";
 
 seederManager.configure([
-  new PostgreSqlSeeder({
+  new PostgresSeeder({
     connection: {
       host: "127.0.0.1",
       port: 5432,

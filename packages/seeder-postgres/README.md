@@ -1,18 +1,18 @@
-# Seeder.js / PostgreSQL
+# Seeder.js / Postgres
 
-[![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-postgresql?style=flat-square)](https://www.npmjs.com/package/@chehsunliu/seeder-postgresql)
+[![NPM Version](https://img.shields.io/npm/v/%40chehsunliu%2Fseeder-postgres?style=flat-square)](https://www.npmjs.com/package/@chehsunliu/seeder-postgres)
 
-The PostgreSQL implementation for Seeder.js.
+The Postgres implementation for Seeder.js.
 
 ## Getting Started
 
 Install Seeder.js:
 
 ```sh
-npm install -D @chehsunliu/seeder @chehsunliu/seeder-postgresql
+npm install -D @chehsunliu/seeder @chehsunliu/seeder-postgres
 ```
 
-Assume the database schemas in the local PostgreSQL server have been managed by Flyway:
+Assume the database schemas in the local Postgres server have been managed by Flyway:
 
 ```yaml
 services:

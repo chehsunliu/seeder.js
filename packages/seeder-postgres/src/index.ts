@@ -31,7 +31,7 @@ type TableInfo = {
   jsonColumns: Set<string>;
 };
 
-export class PostgreSqlSeeder implements Seeder {
+export class PostgresSeeder implements Seeder {
   private readonly connectionInfo: Props["connection"];
   private readonly dataSelectors: DataSelector[];
   private readonly excludedTables: Set<string>;
