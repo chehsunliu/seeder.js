@@ -48,6 +48,32 @@ services:
       - "-connectRetries=60"
       - "migrate"
 
+  postgres:
+    image: postgres:17-alpine
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_PASSWORD: xxx
+      POSTGRES_DB: demo
+    command: ["-c", "log_statement=all"]
+
+  postgres-init:
+    image: flyway/flyway:11-alpine
+    depends_on:
+      - postgres
+    restart: on-failure
+    volumes:
+      - type: bind
+        source: ./db-schemas/postgres
+        target: /flyway/sql
+    command:
+      - "-url=jdbc:postgresql://postgres:5432/demo"
+      - "-user=postgres"
+      - "-password=xxx"
+      - "-connectRetries=60"
+      - "migrate"
+
   ftp:
     image: delfer/alpine-ftp-server
     restart: always

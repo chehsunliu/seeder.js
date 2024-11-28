@@ -1,0 +1,33 @@
+{
+  "name": "@chehsunliu/seeder-postgres",
+  "version": "0.0.0",
+  "description": "The Postgres implementation for Seeder.js",
+  "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chehsunliu/seeder.js.git",
+    "directory": "packages/seeder-postgres"
+  },
+  "bugs": {
+    "url": "https://github.com/chehsunliu/seeder.js/issues"
+  },
+  "keywords": [
+    "seeder",
+    "test",
+    "postgres",
+    "postgresql"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
+  "dependencies": {
+    "@chehsunliu/seeder": "*",
+    "knex": "^3.1.0",
+    "knex-schema-inspector": "^3.1.0",
+    "pg": "^8.13.1"
+  }
+}
