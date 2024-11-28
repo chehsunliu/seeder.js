@@ -52,13 +52,16 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Start containers
-        run: docker compose up -d dynamodb ftp minio mysql sftp
+        run: docker compose up -d dynamodb ftp minio mysql postgres sftp
 
       - name: Provision DynamoDB
         run: docker compose up --exit-code-from dynamodb-init dynamodb-init
 
       - name: Provision MySQL
         run: docker compose up --exit-code-from mysql-init mysql-init
+
+      - name: Provision PostgreSQL
+        run: docker compose up --exit-code-from postgres-init postgres-init
 
       - name: Run the tests
         run: npm run test -- --reporter=verbose --silent --coverage

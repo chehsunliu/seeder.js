@@ -32,6 +32,12 @@
       "path": "./packages/seeder-mysql/tests"
     },
     {
+      "path": "./packages/seeder-postgres"
+    },
+    {
+      "path": "./packages/seeder-postgres/tests"
+    },
+    {
       "path": "./packages/seeder-sftp"
     },
     {
