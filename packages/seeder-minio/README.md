@@ -29,7 +29,7 @@ services:
 Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesAfterEnv` or in Vitest `setupFiles`:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { MinioSeeder } from "@chehsunliu/seeder-minio";
 
 seederManager.configure([
@@ -59,7 +59,7 @@ echo "abc" > data/minio/b/c.txt
 ```
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 beforeEach(async () => {
   await seederManager.truncate();
