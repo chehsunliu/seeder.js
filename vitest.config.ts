@@ -8,7 +8,7 @@ export default defineConfig({
     },
     coverage: {
       provider: "v8",
-      exclude: ["vitest.workspace.mts", ...coverageConfigDefaults.exclude],
+      exclude: ["vitest.*", ...coverageConfigDefaults.exclude],
     },
   },
 });
