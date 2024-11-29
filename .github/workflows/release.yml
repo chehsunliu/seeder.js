@@ -40,5 +40,5 @@ jobs:
         run: npm publish -ws --access public
 
       - name: Publish dev packages
-        if: ${{ steps.update-version.outputs.is-dev == '0' }}
+        if: ${{ steps.update-version.outputs.is-dev == '1' }}
         run: npm publish -ws --access public --tag dev
