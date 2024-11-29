@@ -1,4 +1,4 @@
-import { knex, Knex } from "knex";
+import knex, { Knex } from "knex";
 import { SchemaInspector } from "knex-schema-inspector";
 import fs from "node:fs";
 import path from "node:path";
