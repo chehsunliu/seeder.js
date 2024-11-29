@@ -1,6 +1,6 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { FtpSeeder } from "@chehsunliu/seeder-ftp";
 
 seederManager.configure([

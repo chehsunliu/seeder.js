@@ -3,7 +3,7 @@ import path from "node:path";
 import { Pool } from "pg";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 import { Database } from "./lib/types";
 

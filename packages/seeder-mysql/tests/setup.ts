@@ -1,6 +1,6 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { MySqlSeeder } from "@chehsunliu/seeder-mysql";
 
 seederManager.configure([

@@ -1,6 +1,6 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { RedisSeeder } from "@chehsunliu/seeder-redis";
 
 seederManager.configure([

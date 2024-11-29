@@ -2,7 +2,7 @@ import { S3Client, ListObjectsV2Command, GetObjectCommand } from "@aws-sdk/clien
 import path from "node:path";
 import { beforeEach, describe, it, expect } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 const client = new S3Client({
   region: "us-west-2",

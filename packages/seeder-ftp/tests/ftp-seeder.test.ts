@@ -3,7 +3,7 @@ import path from "node:path";
 import { Writable } from "node:stream";
 import { afterAll, beforeAll, beforeEach, describe, it, expect } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 let client: Client = new Client();
 

@@ -1,7 +1,7 @@
 import path from "node:path";
 import { beforeEach, describe, it } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 describe("none", () => {
   beforeEach(async () => {
