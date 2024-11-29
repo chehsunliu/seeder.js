@@ -1,5 +1,5 @@
 import { knex } from "knex";
-import schemaInspector from "knex-schema-inspector";
+import { SchemaInspector } from "knex-schema-inspector";
 import fs from "node:fs";
 import path from "node:path";
 import { Pool } from "pg";
@@ -96,7 +96,7 @@ export class PostgresSeeder implements Seeder {
     });
 
     try {
-      const inspector = schemaInspector(k);
+      const inspector = SchemaInspector(k);
       const tableNames = await inspector.tables().then((ts) => ts.filter((t) => !this.excludedTables.has(t)));
 
       const tables: TableInfo[] = [];

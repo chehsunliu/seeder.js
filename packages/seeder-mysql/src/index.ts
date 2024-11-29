@@ -1,5 +1,5 @@
 import { knex, Knex } from "knex";
-import schemaInspector from "knex-schema-inspector";
+import { SchemaInspector } from "knex-schema-inspector";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -111,7 +111,7 @@ export class MySqlSeeder implements Seeder {
       return this.metadata;
     }
 
-    const inspector = schemaInspector(this.getKnex());
+    const inspector = SchemaInspector(this.getKnex());
     const tableNames = await inspector.tables().then((ts) => ts.filter((t) => !this.excludedTables.has(t)));
 
     const tables: TableInfo[] = [];

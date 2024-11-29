@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import seederManager from "@chehsunliu/seeder";
 
-import { Database } from "./lib/types";
+import { Database } from "./lib/types.js";
 
 const db = new Kysely<Database>({
   dialect: new PostgresDialect({

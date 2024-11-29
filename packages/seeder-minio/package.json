@@ -1,5 +1,6 @@
 {
   "name": "@chehsunliu/seeder-minio",
+  "type": "module",
   "version": "0.0.0",
   "description": "The MinIO implementation for Seeder.js",
   "author": "Che-Hsun Liu <chehsunliu@gmail.com>",
