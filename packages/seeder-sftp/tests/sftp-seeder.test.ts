@@ -2,7 +2,7 @@ import path from "node:path";
 import SftpClient from "ssh2-sftp-client";
 import { afterAll, beforeAll, beforeEach, describe, it, expect } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 let client: SftpClient = new SftpClient();
 

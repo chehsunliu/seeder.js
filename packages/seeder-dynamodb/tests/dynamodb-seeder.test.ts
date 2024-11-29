@@ -3,7 +3,7 @@ import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 import path from "node:path";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 const client = DynamoDBDocumentClient.from(
   new DynamoDBClient({

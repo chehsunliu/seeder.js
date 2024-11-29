@@ -26,7 +26,7 @@ services:
 Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesAfterEnv` or in Vitest `setupFiles`:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { RedisSeeder } from "@chehsunliu/seeder-redis";
 
 seederManager.configure([
@@ -43,7 +43,7 @@ afterAll(async () => {
 Invoke the seeders in tests:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 beforeEach(async () => {
   await seederManager.truncate();

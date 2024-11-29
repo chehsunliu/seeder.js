@@ -32,4 +32,4 @@ class SeederManager {
   };
 }
 
-export default new SeederManager();
+export const seederManager = new SeederManager();

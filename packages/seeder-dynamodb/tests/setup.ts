@@ -1,6 +1,6 @@
 import { afterAll } from "vitest";
 
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { DynamoDbSeeder } from "@chehsunliu/seeder-dynamodb";
 
 seederManager.configure([

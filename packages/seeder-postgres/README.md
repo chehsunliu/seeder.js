@@ -46,7 +46,7 @@ services:
 Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesAfterEnv` or in Vitest `setupFiles`:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { PostgresSeeder } from "@chehsunliu/seeder-postgres";
 
 seederManager.configure([
@@ -83,7 +83,7 @@ Put some test data in `data/users.json`:
 Invoke the seeders in tests:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 beforeEach(async () => {
   await seederManager.truncate();

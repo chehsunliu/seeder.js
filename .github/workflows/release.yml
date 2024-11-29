@@ -18,9 +18,16 @@ jobs:
         run: npm install
 
       - name: Update version
+        id: update-version
         run: |
           version=${{ github.event.release.tag_name }}
           npm version "${version/v/}" --git-tag-version false --ws
+
+          if echo "$version" | grep -qE '^[0-9.]+$'; then
+            echo "is-dev=0" >> $GITHUB_OUTPUT
+          else
+            echo "is-dev=1" >> $GITHUB_OUTPUT
+          fi
 
       - name: Build
         run: npm run build
@@ -28,5 +35,10 @@ jobs:
       - name: Login NPM
         run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}"
 
-      - name: Publish
+      - name: Publish packages
+        if: ${{ steps.update-version.outputs.is-dev == '0' }}
         run: npm publish -ws --access public
+
+      - name: Publish dev packages
+        if: ${{ steps.update-version.outputs.is-dev == '1' }}
+        run: npm publish -ws --access public --tag dev

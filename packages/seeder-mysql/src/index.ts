@@ -47,9 +47,12 @@ export class MySqlSeeder implements Seeder {
 
   truncate = async (): Promise<void> => {
     const metadata = await this.getMetadata();
+
+    const tasks = [];
     for (const info of metadata.tables) {
-      await this.getKnex()(info.tableName).truncate();
+      tasks.push(this.getKnex()(info.tableName).truncate());
     }
+    await Promise.all(tasks);
   };
 
   seed = async (folder: string): Promise<void> => {

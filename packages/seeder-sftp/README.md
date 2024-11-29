@@ -28,7 +28,7 @@ services:
 Configure the seeders in `setup.ts`, which should be loaded in Jest `setupFilesAfterEnv` or in Vitest `setupFiles`:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 import { SftpSeeder } from "@chehsunliu/seeder-sftp";
 
 seederManager.configure([
@@ -60,7 +60,7 @@ echo "abc" > data/sftp/b.txt
 Invoke the seeders in tests:
 
 ```ts
-import seederManager from "@chehsunliu/seeder";
+import { seederManager } from "@chehsunliu/seeder";
 
 beforeEach(async () => {
   await seederManager.truncate();
