@@ -24,7 +24,7 @@
     "./src"
   ],
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.701.0",
+    "@aws-sdk/client-s3": "^3.703.0",
     "@chehsunliu/seeder": "*"
   }
 }
