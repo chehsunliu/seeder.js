@@ -18,13 +18,13 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.13.8",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.14.0",
     "@types/pg": "^8.11.11",
     "@types/ssh2-sftp-client": "^9.0.4",
     "@vitest/coverage-v8": "^3.0.7",
-    "kysely": "^0.27.5",
-    "prettier": "^3.5.2",
+    "kysely": "^0.27.6",
+    "prettier": "^3.5.3",
     "typescript": "^5.8.2",
     "vitest": "^3.0.5"
   }
