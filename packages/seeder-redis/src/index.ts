@@ -1,4 +1,4 @@
-import { createClient, RedisClientType, RedisFlushModes } from "@redis/client";
+import { createClient, RedisClientType, REDIS_FLUSH_MODES } from "@redis/client";
 
 import { Seeder } from "@chehsunliu/seeder";
 
@@ -16,7 +16,7 @@ export class RedisSeeder implements Seeder {
 
   truncate = async (): Promise<void> => {
     const client = await this.getClient();
-    await client.flushAll(RedisFlushModes.SYNC);
+    await client.flushAll(REDIS_FLUSH_MODES.SYNC);
   };
 
   seed = async (): Promise<void> => {};
