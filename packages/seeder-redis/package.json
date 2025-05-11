@@ -25,6 +25,6 @@
   ],
   "dependencies": {
     "@chehsunliu/seeder": "*",
-    "@redis/client": "^1.6.0"
+    "@redis/client": "^5.0.1"
   }
 }
