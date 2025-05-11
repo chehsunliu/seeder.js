@@ -5,20 +5,7 @@ updates:
     schedule:
       interval: monthly
     groups:
-      aws-sdk:
-        patterns:
-          - "@aws-sdk/*"
-      knex:
-        patterns:
-          - "knex"
-          - "knex-schema-inspector"
-      ssh2-sftp-client:
-        patterns:
-          - "@types/ssh2-sftp-client"
-          - "ssh2-sftp-client"
-      vite:
-        patterns:
-          - "@vitest/*"
-          - "vitest"
+      prod-dependencies:
+        dependency-type: production
       dev-dependencies:
         dependency-type: development
