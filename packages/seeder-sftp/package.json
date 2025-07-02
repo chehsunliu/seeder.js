@@ -25,6 +25,6 @@
   ],
   "dependencies": {
     "@chehsunliu/seeder": "*",
-    "ssh2-sftp-client": "^12.0.0"
+    "ssh2-sftp-client": "^12.0.1"
   }
 }
