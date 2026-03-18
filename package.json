@@ -23,7 +23,7 @@
     "@types/pg": "^8.15.4",
     "@types/ssh2-sftp-client": "^9.0.4",
     "@vitest/coverage-v8": "^3.2.4",
-    "kysely": "^0.28.2",
+    "kysely": "^0.28.11",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "vitest": "^3.0.5"
